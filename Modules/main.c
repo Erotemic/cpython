@@ -251,9 +251,8 @@ static PyObject *dedent_utf8_bytes(PyObject *bytes) {
         char *leading_whitespace_end = NULL;
 
         // scan the whole line
-        char c = 0;
-        while (iter < end && (c = *iter) != '\n') {
-            if (!leading_whitespace_end && c != ' ' && c != '\t') {
+        while (iter < end && *iter != '\n') {
+            if (!leading_whitespace_end && *iter != ' ' && *iter != '\t') {
                 if (iter == line_start) {
                     // some line has no indent, fast exit!
                     return bytes;
@@ -262,8 +261,6 @@ static PyObject *dedent_utf8_bytes(PyObject *bytes) {
             }
             ++iter;
         }
-
-        // we reach the end of a line
 
         // if this line has all white space, skip it
         if (!leading_whitespace_end) {
