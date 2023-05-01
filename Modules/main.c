@@ -10,6 +10,7 @@
 #include "pycore_pythonrun.h"     // _PyRun_AnyFileObject()
 
 /* Includes for exit_sigint() */
+#include <assert.h>
 #include <stdio.h>                // perror()
 #ifdef HAVE_SIGNAL_H
 #  include <signal.h>             // SIGINT
@@ -302,6 +303,9 @@ static PyObject *dedent_utf8_bytes(PyObject *bytes) {
         }
     }
 
+    if (candidate_len == 0) {
+        return bytes;
+    }
     assert(candidate_len > 0);
 
     // trigger a dedent
