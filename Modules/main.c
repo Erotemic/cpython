@@ -320,6 +320,7 @@ static PyObject *dedent_utf8_bytes(PyObject *bytes) {
 
     for (char *iter = start; iter < end; ++iter) {
         line_start = iter;
+        in_leading_space = true;
 
         // iterate over a line
         while (iter < end && *iter != '\n') {
