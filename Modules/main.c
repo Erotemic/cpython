@@ -10,7 +10,6 @@
 #include "pycore_pythonrun.h"     // _PyRun_AnyFileObject()
 
 /* Includes for exit_sigint() */
-#include <assert.h>
 #include <stdio.h>                // perror()
 #ifdef HAVE_SIGNAL_H
 #  include <signal.h>             // SIGINT
