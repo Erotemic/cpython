@@ -3576,7 +3576,7 @@ _PyBytes_Repeat(char* dest, Py_ssize_t len_dest,
  *
  * len is the length of the string to dedent.
  * expecting (len >= 0)
- * 
+ *
  * writer is a _PyBytesWriter object to write the dedented string.
  * expecting (writer != NULL)
  *
@@ -3587,7 +3587,7 @@ _PyBytes_Repeat(char* dest, Py_ssize_t len_dest,
 int
 _PyBytes_Dedent(const char *str, Py_ssize_t len, _PyBytesWriter *writer,
                 char **p)
-{   
+{
     assert(str);
     assert(p != NULL && *p != NULL);
     assert(writer);
