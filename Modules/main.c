@@ -8,7 +8,6 @@
 #include "pycore_pylifecycle.h"   // _Py_PreInitializeFromPyArgv()
 #include "pycore_pystate.h"       // _PyInterpreterState_GET()
 #include "pycore_pythonrun.h"     // _PyRun_AnyFileObject()
-#include "pycore_bytesobject.h"   // _PyBytes_Dedent()
 
 /* Includes for exit_sigint() */
 #include <stdio.h>                // perror()
